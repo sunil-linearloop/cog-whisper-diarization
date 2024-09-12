@@ -9,7 +9,6 @@ import time
 import torch
 import re
 import os
-hf_token = os.environ.get('HF_TOKEN')
 
 from cog import BasePredictor, BaseModel, Input, File, Path
 from faster_whisper import WhisperModel
@@ -35,7 +34,7 @@ class Predictor(BasePredictor):
         )
         self.diarization_model = Pipeline.from_pretrained(
             "pyannote/speaker-diarization-3.1",
-            use_auth_token=hf_token,
+            use_auth_token="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",
         ).to(torch.device("cuda"))
 
     def predict(
