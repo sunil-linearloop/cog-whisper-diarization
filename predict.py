@@ -33,7 +33,7 @@ class Predictor(BasePredictor):
         )
         self.diarization_model = Pipeline.from_pretrained(
             "pyannote/speaker-diarization-3.1",
-            use_auth_token="hf_token",
+            use_auth_token="HF_TOKEN",
         ).to(torch.device("cuda"))
 
     def predict(
